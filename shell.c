@@ -1,24 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 int main(int argc, char *argv[]) {
-  // Flush after every printf
-  setbuf(stdout, NULL);
+    // Flush after every printf
+    setbuf(stdout, NULL);
 
-  // TODO: Uncomment the code below to pass the first stage
-  printf("$ ");
+    do {
+        // TODO: Uncomment the code below to pass the first stage
+        printf("$ ");
 
-  // waiting for user input
-  char command[1024];
-  fgets(command, sizeof(command), stdin);
+        // Waiting for user input
+        char command[1024];
+        fgets(command, sizeof(command), stdin);
 
-  // Removing newlines from the user provided command 
-  command[strcspn(command, "\n")] = '\0';
+        // Removing newlines from the user provided command
+        command[strcspn(command, "\n")] = '\0';
+	if (strcmp(command, "exit") == 0) {
+      exit(EXIT_SUCCESS);
+    }
 
-  // Printing the 'command not found' message
-  printf("%s: command not found\n", command);
+        // Printing the 'command not found' message
+        printf("%s: command not found\n", command);
 
-  return 0;
+    } while (true);
+
+    return 0;
 }
-
