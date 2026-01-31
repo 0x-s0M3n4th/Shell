@@ -14,10 +14,10 @@ int main(int argc, char *argv[]) {
         // Waiting for user input
         char command[1024];
         fgets(command, sizeof(command), stdin);
-
         // Removing newlines from the user provided command
         command[strcspn(command, "\n")] = '\0';
-	if (strcmp(command, "exit") == 0) {
+
+        if (strcmp(command, "exit") == 0) {
       exit(EXIT_SUCCESS);
     }
 
