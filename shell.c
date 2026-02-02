@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     setbuf(stdout, NULL);
 
     do {
-        // TODO: Uncomment the code below to pass the first stage
+        // Printing the classic dollar sign for prompt
         printf("$ ");
 
         // Waiting for user input
@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
       exit(EXIT_SUCCESS);
     }
         if (strncmp(command, "echo ", 5) == 0) {
-            printf("%s\n ", command + 5);
+            printf("%s\n", command + 5);
 
         } else {
             // Printing the 'command not found' message
