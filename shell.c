@@ -17,13 +17,35 @@ int main(int argc, char *argv[]) {
         // Removing newlines from the user provided command
         command[strcspn(command, "\n")] = '\0';
 
+
+        // on writting exit -> the shell will exit it's execution
         if (strcmp(command, "exit") == 0) {
       exit(EXIT_SUCCESS);
     }
+        // for echo we need to print the next occurances of words after the command echo itself:
         if (strncmp(command, "echo ", 5) == 0) {
             printf("%s\n", command + 5);
 
-        } else {
+        } else if (strncmp(command, "type ", 5) == 0) { 
+            // checking for the command 'type' and then saving the rest of the argument provided with type in a pointer to that argument
+
+
+            char *arg = command + 5; // command + 5 means look for the 5th index of the command variable
+
+            // Now we will check for what is that argument they provided ->
+
+            if (strcmp(arg, "echo") == 0) {
+                printf("%s is a shell builtin\n", arg);
+            } else if (strcmp(arg, "exit") == 0) {
+                printf("%s is a shell builtin\n", arg);
+            } else if (strcmp(arg, "type") == 0) {
+                printf("%s is a shell builtin\n", arg);
+            } else {
+                printf("%s: not found\n", arg);
+            }
+            
+        }
+        else {
             // Printing the 'command not found' message
             printf("%s: command not found\n", command);
         }
