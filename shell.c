@@ -20,9 +20,13 @@ int main(int argc, char *argv[]) {
         if (strcmp(command, "exit") == 0) {
       exit(EXIT_SUCCESS);
     }
+        if (strncmp(command, "echo ", 5) == 0) {
+            printf("%s\n ", command + 5);
 
-        // Printing the 'command not found' message
-        printf("%s: command not found\n", command);
+        } else {
+            // Printing the 'command not found' message
+            printf("%s: command not found\n", command);
+        }
 
     } while (true);
 
