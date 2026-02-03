@@ -3,4 +3,4 @@ Compile the shell.c file using gcc using the following command -> gcc shell.c -o
 Then run the binary using the command -> ./shell
 
 
-FOR CONTRIBUTION -> Make your commits -> DO A PULL REQUEST.
+FOR CONTRIBUTION -> Make your commits and merge -> DO A PULL REQUEST.
